@@ -1085,7 +1085,7 @@
                        boolean `boolean
                        nil)]
       [(vary-meta local dissoc :tag) (list prim-fn init)]
-      [(vary-meta local assoc :tag tag) init])))
+      [(vary-meta local merge (when tag {:tag tag})) init])))
 
 (defn state-machine [body num-user-params [crossing-env env] user-transitions]
   (binding [an-jvm/run-passes run-passes]
